@@ -9,7 +9,7 @@ binding = "ASSETS"
 [[d1_databases]]
 binding = "DB"
 database_name = "slechtegrappen-db"
-database_id = "d831c95a-a47e-448b-b985-634fe142553"
+database_id = "d831c95a-a47e-448b-b985-634fe1425532"
 
 [[ratelimits]]
 name = "JOKE_RATE_LIMITER"
