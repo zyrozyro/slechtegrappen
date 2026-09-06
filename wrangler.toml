@@ -1,0 +1,20 @@
+name = "slechtegrappen"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "slechtegrappen-db"
+database_id = "d831c95a-a47e-448b-b985-634fe142553"
+
+[[ratelimits]]
+name = "JOKE_RATE_LIMITER"
+namespace_id = "1001"
+
+[ratelimits.simple]
+limit = 10
+period = 60
