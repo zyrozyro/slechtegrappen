@@ -1,0 +1,106 @@
+:root {
+  --ink: #1b1b1f;
+  --paper: #fbf7ee;
+  --card: #ffffff;
+  --punch: #ff5a36;
+  --punch-dark: #d6461f;
+  --line: #e8e1d2;
+  --muted: #6b6a63;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 24px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Inter, system-ui, sans-serif;
+}
+
+#joke-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 28px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  text-align: center;
+  /* Makes \n in the joke become visible line breaks */
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+#joke-text.loading {
+  flex-direction: column;
+  color: var(--muted);
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.95rem;
+}
+
+.spinner {
+  width: 30px;
+  height: 30px;
+  margin: 0 auto 12px;
+  border: 3px solid var(--line);
+  border-top-color: var(--punch);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+button {
+  height: 45px;
+  padding: 0 28px;
+  border: none;
+  border-radius: 999px;
+  background: var(--punch);
+  color: white;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    transform 0.1s ease;
+}
+
+button:hover:not(:disabled) {
+  background: var(--punch-dark);
+}
+
+button:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation-duration: 1.6s;
+  }
+}
